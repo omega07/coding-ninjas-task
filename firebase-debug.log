@@ -1,0 +1,83 @@
+[debug] [2021-06-18T11:09:36.999Z] ----------------------------------------------------------------------
+[debug] [2021-06-18T11:09:37.006Z] Command:       /home/omega07/.nvm/versions/node/v16.2.0/bin/node /home/omega07/.nvm/versions/node/v16.2.0/bin/firebase deploy
+[debug] [2021-06-18T11:09:37.008Z] CLI Version:   9.13.1
+[debug] [2021-06-18T11:09:37.008Z] Platform:      linux
+[debug] [2021-06-18T11:09:37.008Z] Node Version:  v16.2.0
+[debug] [2021-06-18T11:09:37.584Z] Time:          Fri Jun 18 2021 16:39:37 GMT+0530 (GMT+05:30)
+[debug] [2021-06-18T11:09:37.584Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-06-18T11:09:37.650Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-06-18T11:09:37.650Z] > authorizing via signed-in user (shahayush2507@gmail.com)
+[debug] [2021-06-18T11:09:37.650Z] [iam] checking project codingninjas-mini-assignment for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2021-06-18T11:09:37.654Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/codingninjas-mini-assignment:testIamPermissions  
+ {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2021-06-18T11:09:39.184Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Fri, 18 Jun 2021 11:09:37 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=1324","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-06-18T11:09:39.188Z] > refreshing access token with scopes: []
+[debug] [2021-06-18T11:09:39.188Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-06-18T11:09:39.372Z] <<< HTTP RESPONSE 200 {"expires":"Mon, 01 Jan 1990 00:00:00 GMT","date":"Fri, 18 Jun 2021 11:09:38 GMT","pragma":"no-cache","cache-control":"no-cache, no-store, max-age=0, must-revalidate","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-06-18T11:09:39.490Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/codingninjas-mini-assignment [none]
+[debug] [2021-06-18T11:09:39.927Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/codingninjas-mini-assignment 200
+[debug] [2021-06-18T11:09:39.928Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/codingninjas-mini-assignment {"projectId":"codingninjas-mini-assignment","projectNumber":"956570676705","displayName":"codingninjas mini assignment","name":"projects/codingninjas-mini-assignment","resources":{"hostingSite":"codingninjas-mini-assignment"},"state":"ACTIVE"}
+[info] 
+[info] === Deploying to 'codingninjas-mini-assignment'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2021-06-18T11:09:40.002Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2021-06-18T11:09:40.002Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-06-18T11:09:40.259Z] <<< HTTP RESPONSE 200 {"cache-control":"no-cache, no-store, max-age=0, must-revalidate","pragma":"no-cache","date":"Fri, 18 Jun 2021 11:09:38 GMT","expires":"Mon, 01 Jan 1990 00:00:00 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-06-18T11:09:40.347Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/codingninjas-mini-assignment/versions  
+ {"config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2021-06-18T11:09:42.237Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Fri, 18 Jun 2021 11:09:40 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] i  hosting[codingninjas-mini-assignment]: beginning deploy... 
+[info] i  hosting[codingninjas-mini-assignment]: found 6 files in public 
+[debug] [2021-06-18T11:09:42.305Z] > refreshing access token with scopes: []
+[debug] [2021-06-18T11:09:42.305Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-06-18T11:09:42.314Z] [hosting] hash cache [cHVibGlj] stored for 6 files
+[debug] [2021-06-18T11:09:42.314Z] [hosting][hash queue][FINAL] {"max":49,"min":1,"avg":14.666666666666666,"active":0,"complete":6,"success":6,"errored":0,"retried":0,"total":6,"elapsed":60}
+[debug] [2021-06-18T11:09:42.538Z] <<< HTTP RESPONSE 200 {"date":"Fri, 18 Jun 2021 11:09:41 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","expires":"Mon, 01 Jan 1990 00:00:00 GMT","pragma":"no-cache","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-06-18T11:09:42.617Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/sites/codingninjas-mini-assignment/versions/a3caa04679c43bda:populateFiles [none]
+[debug] [2021-06-18T11:09:42.617Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/sites/codingninjas-mini-assignment/versions/a3caa04679c43bda:populateFiles {"files":{"/404.html":"b7bab6b83fa074653ff28c8d2a64135d3434575f70a12ab3d3ba8080461b9537","/title-logo.png":"b28387586d17fc6161bdec6ad66379f49216be6c2635a60481871536a6a7d780","/title-logo.png.crdownload":"26bd83da470afe14a4b921f53c9b60342cffef39138353994cb1ead54ab54688","/index.html":"d31e29caeba794d9d77d9a4dfa842a2760c189ef484d6d22731047497db7476a","/bundle.js.LICENSE.txt":"fa1aeb4cc573e300e9d8a6e493f2ccd35e90f8cfa6e7c574bbad2952b2ec9458","/bundle.js":"b420d6314fbd5eede18250aa1f237791143724096f7de88be9b0bc7f7e1b30fd"}}
+[debug] [2021-06-18T11:09:44.489Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/sites/codingninjas-mini-assignment/versions/a3caa04679c43bda:populateFiles 200
+[debug] [2021-06-18T11:09:44.489Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/sites/codingninjas-mini-assignment/versions/a3caa04679c43bda:populateFiles {"uploadRequiredHashes":["d31e29caeba794d9d77d9a4dfa842a2760c189ef484d6d22731047497db7476a","fa1aeb4cc573e300e9d8a6e493f2ccd35e90f8cfa6e7c574bbad2952b2ec9458","b420d6314fbd5eede18250aa1f237791143724096f7de88be9b0bc7f7e1b30fd"],"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/codingninjas-mini-assignment/versions/a3caa04679c43bda/files"}
+[debug] [2021-06-18T11:09:44.491Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/codingninjas-mini-assignment/versions/a3caa04679c43bda/files/d31e29caeba794d9d77d9a4dfa842a2760c189ef484d6d22731047497db7476a [none]
+[debug] [2021-06-18T11:09:44.491Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/codingninjas-mini-assignment/versions/a3caa04679c43bda/files/d31e29caeba794d9d77d9a4dfa842a2760c189ef484d6d22731047497db7476a [stream]
+[debug] [2021-06-18T11:09:44.493Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/codingninjas-mini-assignment/versions/a3caa04679c43bda/files/fa1aeb4cc573e300e9d8a6e493f2ccd35e90f8cfa6e7c574bbad2952b2ec9458 [none]
+[debug] [2021-06-18T11:09:44.493Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/codingninjas-mini-assignment/versions/a3caa04679c43bda/files/fa1aeb4cc573e300e9d8a6e493f2ccd35e90f8cfa6e7c574bbad2952b2ec9458 [stream]
+[debug] [2021-06-18T11:09:44.496Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/codingninjas-mini-assignment/versions/a3caa04679c43bda/files/b420d6314fbd5eede18250aa1f237791143724096f7de88be9b0bc7f7e1b30fd [none]
+[debug] [2021-06-18T11:09:44.496Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/codingninjas-mini-assignment/versions/a3caa04679c43bda/files/b420d6314fbd5eede18250aa1f237791143724096f7de88be9b0bc7f7e1b30fd [stream]
+[debug] [2021-06-18T11:09:44.498Z] [hosting][populate queue][FINAL] {"max":2187,"min":2187,"avg":2187,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":2194}
+[debug] [2021-06-18T11:09:44.499Z] [hosting] uploads queued: 3
+[debug] [2021-06-18T11:09:45.967Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/codingninjas-mini-assignment/versions/a3caa04679c43bda/files/fa1aeb4cc573e300e9d8a6e493f2ccd35e90f8cfa6e7c574bbad2952b2ec9458 200
+[debug] [2021-06-18T11:09:45.967Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/codingninjas-mini-assignment/versions/a3caa04679c43bda/files/fa1aeb4cc573e300e9d8a6e493f2ccd35e90f8cfa6e7c574bbad2952b2ec9458 [stream]
+[debug] [2021-06-18T11:09:46.115Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/codingninjas-mini-assignment/versions/a3caa04679c43bda/files/d31e29caeba794d9d77d9a4dfa842a2760c189ef484d6d22731047497db7476a 200
+[debug] [2021-06-18T11:09:46.116Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/codingninjas-mini-assignment/versions/a3caa04679c43bda/files/d31e29caeba794d9d77d9a4dfa842a2760c189ef484d6d22731047497db7476a [stream]
+[debug] [2021-06-18T11:09:46.211Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/codingninjas-mini-assignment/versions/a3caa04679c43bda/files/b420d6314fbd5eede18250aa1f237791143724096f7de88be9b0bc7f7e1b30fd 200
+[debug] [2021-06-18T11:09:46.211Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/codingninjas-mini-assignment/versions/a3caa04679c43bda/files/b420d6314fbd5eede18250aa1f237791143724096f7de88be9b0bc7f7e1b30fd [stream]
+[debug] [2021-06-18T11:09:46.211Z] [hosting][upload queue][FINAL] {"max":1721,"min":1477,"avg":1608.3333333333333,"active":0,"complete":3,"success":3,"errored":0,"retried":0,"total":3,"elapsed":1722}
+[info] ✔  hosting[codingninjas-mini-assignment]: file upload complete 
+[debug] [2021-06-18T11:09:46.213Z] [hosting] deploy completed after 3974ms
+[debug] [2021-06-18T11:09:46.217Z] [
+  {
+    "config": {
+      "public": "public",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "site": "codingninjas-mini-assignment"
+    },
+    "site": "codingninjas-mini-assignment",
+    "version": "sites/codingninjas-mini-assignment/versions/a3caa04679c43bda"
+  }
+]
+[info] i  hosting[codingninjas-mini-assignment]: finalizing version... 
+[debug] [2021-06-18T11:09:46.219Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2021-06-18T11:09:46.219Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-06-18T11:09:46.431Z] <<< HTTP RESPONSE 200 {"date":"Fri, 18 Jun 2021 11:09:45 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","pragma":"no-cache","expires":"Mon, 01 Jan 1990 00:00:00 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-06-18T11:09:46.643Z] >>> HTTP REQUEST PATCH https://firebasehosting.googleapis.com/v1beta1/sites/codingninjas-mini-assignment/versions/a3caa04679c43bda?updateMask=status  
+ {"status":"FINALIZED"}

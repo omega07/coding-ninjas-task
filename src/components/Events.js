@@ -11,7 +11,6 @@ import NoEventsCard from './NoEventsCard.js'
 import '../styles/events.css'
 
 let selectedTags = localStorage.getItem('selectedTags')?JSON.parse(localStorage.getItem('selectedTags')):[];
-
 const Events = () => {
     const URL_tags = 'https://api.codingninjas.com/api/v3/event_tags/';
     const URL_events = 'https://api.codingninjas.com/api/v3/events?'
@@ -25,15 +24,14 @@ const Events = () => {
     const [events, setEvents] = useState([]);
     const [pageNumber, setPageNumber] = useState(0);
     const [numOfEvents, setNumOfEvents] = useState(5);
+    const [pageCount, setPageCount] = useState(0);
+    const [noEvent, setNoEvent] = useState('');
     const tag_ref = useRef();
     const [loading_events_msg, setLoading_events_msg] = useState(<p className="loading_events_msg">Loading...</p>);
-    let start = pageNumber*numOfEvents;
-    let end = start + numOfEvents;
-    let pageCount = Math.ceil(events.length/numOfEvents); 
+    let start = 0;
+    let end = numOfEvents;
 
     useEffect(() => {
-        console.log("first render!");
-        console.log(selectedTags);
         axios.get(URL_tags)
         .then((res) => {
             let arr = res.data.data.tags; 
@@ -82,8 +80,7 @@ const Events = () => {
     }
 
     const changeNumofPages = e => {
-        if(e.target.value==='All') setNumOfEvents(events.length);
-        else setNumOfEvents(e.target.value);
+        setNumOfEvents(e.target.value);
     }
 
     const clearAllTags = () => {
@@ -91,10 +88,8 @@ const Events = () => {
         let len_of_selected = selectedTags.length;
         if(!len_of_selected) return;
         for(let i=0;i<len;i++) {
-            if(selectedTags.includes(tags[i])) {
-                tag_ref.current.children[i].style.background = 'rgba(183, 116, 238, 0.164)';
-                tag_ref.current.children[i].style.color = 'black'
-            }
+            tag_ref.current.children[i].style.background = 'rgba(183, 116, 238, 0.164)';
+            tag_ref.current.children[i].style.color = 'black'
         }
         selectedTags = [];
         localStorage.setItem('selectedTags',[]);
@@ -113,40 +108,54 @@ const Events = () => {
             if(selectedTags.includes(Tag)) {
                 console.log(tag_ref.current.children[i]);
                 tag_ref.current.children[i].style.background = '#2b2eff';
-                tag_ref.current.children[i].style.color = 'white'
+                tag_ref.current.children[i].style.color = 'white';
             }
         }   
     }, [tags]);
 
     useEffect(() => {
         setEvents([]);
-        setPageNumber(0);
+        setNoEvent('');
         setLoading_events(<div className="loader"></div>);
         setLoading_events_msg(<p className="loading_events_msg">Loading...</p>);
+        const offset = pageNumber*numOfEvents;
         const data = {
             "event_category":category,
             "event_sub_category":subcategory,
             "tag_list":[...selectedTags],
-            "offset":"0"
+            "offset":offset
         }
         let url = URL_events + `event_category=${data.event_category}&event_sub_category=${data.event_sub_category}&tag_list=`;
         let tag_list_string = "";
         data.tag_list.forEach(tag => {
         tag_list_string += `${tag},`; 
         });
-        console.log(tag_list_string);
         let req_tag_list = tag_list_string.slice(0,tag_list_string.length-1);
         url = url + req_tag_list;
+        let tempURL = url;
         url = url + `&offset=${data.offset}`;
         console.log(url);
         axios.get(url)
         .then(res => {
-            console.log(res.data.data.events);
             setEvents(res.data.data.events);
+            setNoEvent(<NoEventsCard/>);
+            let off = (res.data.data.page_count-1)*20;
+            tempURL = tempURL+`&offset=${off}`;
+            axios.get(tempURL)
+            .then(res => {
+                let len = res.data.data.events.length;
+                off+=len;
+                let number_of_pages = Math.ceil(off/numOfEvents);
+                setPageCount(number_of_pages);
+            })
             setLoading_events('');
             setLoading_events_msg('');
         })
-    }, [numOfTags, category, subcategory]);
+    }, [numOfTags, category, subcategory, pageNumber, numOfEvents]);
+
+    useEffect(() => {
+        setPageNumber(0);
+    }, [numOfTags, category, subcategory, numOfEvents])
 
     return (
         <div className='app'>
@@ -198,14 +207,13 @@ const Events = () => {
                     {loading_events_msg}
                     {
                         events.length?events.slice(start,end).map((event,index) => <EventCard key={index} eventDetails={event}/>):
-                        <NoEventsCard/>
+                        noEvent
                     }
                     <div className="pages">
                         <select name="pagenum" onChange={changeNumofPages} className="pagenum">
                             <option value="5">5</option>
                             <option value="10">10</option>
                             <option value="20">20</option>
-                            <option value="All">All</option>
                         </select>
                         <ReactPaginate 
                             previousLabel={"Prev"}

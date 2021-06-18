@@ -41,7 +41,7 @@ const EventCard = (eventDetails) => {
     let start_date = dd.toDateString();
     let venue = eventDetails.eventDetails.venue;
     let currency = eventDetails.eventDetails.currency, fee = eventDetails.eventDetails.fees;
-    let overview = Threedots(eventDetails.eventDetails.short_desc,170);
+    let overview = eventDetails.eventDetails.short_desc?Threedots(eventDetails.eventDetails.short_desc,170):"";
     let x = new Date();
     let curr_time = x.getTime();
     let running = (curr_time>=st && curr_time<=et?true:false);

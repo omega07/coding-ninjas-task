@@ -60,9 +60,7 @@
     height: 25%;
     margin-left: 3%;
     margin-top: 1%;
-    text-overflow: ellipsis;
-    overflow:inherit;
-    white-space:pre-line;
+    overflow:hidden;
     font-family: 'Titillium Web', sans-serif;
     font-size: 1.2vw;
     font-weight: bolder;
@@ -108,6 +106,7 @@
 
 .time, .fee, .venue {
     font-size: 1vw;
+    overflow: hidden;
 }
 
 .event_name {

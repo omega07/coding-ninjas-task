@@ -1,0 +1,189 @@
+.event_card {
+    height: 300px;
+    width: 100%;
+    background-color: #2effff56;
+    cursor: pointer;
+    margin: 3%;
+    border-radius: 13px;
+    display: flex;
+    border: 1px solid #0d505056;
+}
+
+.event_card:hover {
+    background-color: #2effffaf;
+}
+
+.registrations {
+    position: absolute;
+    top: 80%;
+    width: 90%;
+    height: 15%;
+    background-color: rgba(255, 255, 255, 0.932);
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1vw;
+}
+
+.reg_para {
+    font-family: sans-serif;
+    font-size: 1vw;
+    margin-left: 2%;
+}
+
+.fontSizeSmall {
+    font-size: 1px;
+}
+
+
+.left_side {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 60%;
+}
+
+.details {
+    width: 95%;
+    border-top: 1px solid #0d50502c;
+    border-bottom: 1px solid #0d50502c;
+    height: 20%;
+    margin-left: 3%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.overview {
+    width: 95%;
+    height: 25%;
+    margin-left: 3%;
+    margin-top: 1%;
+    text-overflow: ellipsis;
+    overflow:inherit;
+    white-space:pre-line;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 1.2vw;
+    font-weight: bolder;
+}
+
+.reg_run_btn {
+    position: absolute;
+    margin-top: -5%;
+    margin-left: 48%;
+    font-size: 1.3vw;
+    height: 5%;
+    width: 7%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.img_outer_div {
+    width: 40%;
+    height: 100%;
+    margin-left: 1%;
+    margin-top: 1%;
+    display: flex;
+    flex-direction: column;
+}
+
+.avatar_div {
+    display: flex;
+}
+
+#avatar  {
+    margin-top: 3% !important;
+    margin-left: 2% !important;
+}
+
+.other_users {
+    margin-left: 3%;
+    margin-top: 1%;
+    font-size: 1vw;
+}
+
+.time, .fee, .venue {
+    font-size: 1vw;
+}
+
+.event_name {
+    margin-top: 2%;
+    margin-left: 3%;
+    font-size: 1.6vw;
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: bolder;
+}
+
+
+.img_div {
+    width: 100%;
+    height: 75%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cover_img {
+    width: 100%;
+    height: 100%;
+    border: 1px solid;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.announce_icon {
+    animation: blink 2s ease-in infinite;
+    margin-left: 2%;
+}
+
+@keyframes blink {
+  from, to { opacity: 1 }
+  50% { opacity: 0 }
+}
+
+.reg_run_btn::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	background-color: rgba(62, 12, 128, 0.171);
+	transition: all 0.3s;
+}
+.reg_run_btn:hover::before {
+	opacity: 0 ;
+	transform: scale(0.5,0.5);
+}
+.reg_run_btn::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	opacity: 0;
+	transition: all 0.3s;
+	border: 1px solid rgba(22, 7, 161, 0.692);
+    color: #2b2eff;
+	transform: scale(1.2,1.2);
+}
+.reg_run_btn:hover::after {
+	opacity: 1;
+	transform: scale(1,1);
+}
+
+.ending_event {
+    color: red;
+}
+
+.starting_event {
+    color: rgb(0, 99, 0);
+}
